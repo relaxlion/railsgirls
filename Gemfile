@@ -7,6 +7,7 @@ gem 'rails', '~> 5.0.0'
 gem 'sqlite3'
 gem 'carrierwave'
 # Use Puma as the app server
+gem 'mini_magick', '3.8.0'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
