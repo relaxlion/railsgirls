@@ -1,3 +1,3 @@
 # railsgirls
-test
+tests
 
