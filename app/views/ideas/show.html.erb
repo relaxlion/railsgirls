@@ -2,7 +2,12 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @idea.name.upcase %>
+  <%= @idea.name%>
+</p>
+
+<p>
+  <strong> New Name:</strong>
+  <%= @idea.strange %>
 </p>
 
 <p>
@@ -13,6 +18,15 @@
 <p>
   <strong>Picture:</strong>
   <%= image_tag(@idea.picture_url, width: 600) if @idea.picture.present? %>
+  <h3>Comments</h3>
+  <% @comments.each do |comment| %>
+    <div>
+      <strong><%= comment.user_name %></strong>
+      <br />
+      <p><%= comment.body %></p>
+    </div>
+  <% end %>
+  <%= render 'comments/form' ,comment:@comment%>
 </p>
 
 <%= link_to 'Edit', edit_idea_path(@idea) %> |
