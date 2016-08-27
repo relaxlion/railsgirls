@@ -16,11 +16,15 @@ class IdeasController < ApplicationController
 
   # GET /ideas/new
   def new
-    @idea = Idea.new
+    @idea = Idea.new(user_id:current_user.id)
+
   end
 
   # GET /ideas/1/edit
   def edit
+    if @idea.user !=current_user
+       redirect_to idea_path(@idea), notice: 'This is not yours.'
+    end
   end
 
   # POST /ideas
